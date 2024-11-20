@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shareable Resume Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Form Section -->
+    <div class="form-container">
+      <h1 class="ed">Shareable Resume Generator</h1>
+      <h2>Enter Your Information</h2>
+      <form id="resumeForm">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" required />
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="linkedin">LinkedIn Profile Link:</label>
+        <input type="url" id="linkedin" required />
+
+        <label for="education">Education:</label>
+        <input
+          type="text"
+          id="education"
+          placeholder="e.g., Karachi Board"
+          required
+        />
+
+        <label for="skills">Skills (Separate with commas):</label>
+        <input
+          type="text"
+          id="skills"
+          placeholder="e.g., HTML, CSS, JavaScript"
+          required
+        />
+
+        <label for="workExperience">Work Experience:</label>
+        <textarea
+          id="workExperience"
+          placeholder="Your work experience"
+        ></textarea>
+
+        <label for="profileImage">Profile Image:</label>
+        <input type="file" id="profileImage" accept="image/*" required />
+
+        <button class="butt" type="submit" id="generateResume">
+          Generate Resume
+        </button>
+      </form>
+    </div>
+
+    <!-- Resume Display Section -->
+    <div
+      id="resumeOutput"
+      contenteditable="true"
+      class="box"
+      style="display: none"
+    >
+      <center>
+        <img
+          id="profilePic"
+          src=""
+          alt="Profile Photo"
+          class="profile-picture"
+        />
+      </center>
+      <div class="div2"><h1>Personal Information</h1></div>
+      <div class="line" id="personalInfo"></div>
+
+      <div class="div2"><h1>Education</h1></div>
+      <div class="line" id="educationInfo"></div>
+
+      <div class="div2"><h1>Work Experience</h1></div>
+      <div class="line" id="workExperienceInfo"></div>
+
+      <section id="skill">
+        <div class="div2"><h1 class="sk">Skills</h1></div>
+        <div class="line" id="skillsInfo"></div>
+      </section>
+
+      <div id="shareable-link-container" style="display: none;"> <h2>Shareable Link</h2>
+        <p>Here is your unique link to view or edit your resume:</p> <a href="#" id="shareable-link" target="_blank"></a> <br>
+        <br>
+        <button class="hhh"   id="download-pdf"><b>Download as PDF</b></button> 
+        </div>
+
+    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
